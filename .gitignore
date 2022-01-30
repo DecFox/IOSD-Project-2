@@ -5,7 +5,11 @@
 
 #server dependencies
 /server/__pycache__
-/server/.env
+/server/include
+/server/lib64
+/server/bin
+/server/pyvenv.cfg
+/server/lib
 
 # client dependencies
 /client/node_modules
