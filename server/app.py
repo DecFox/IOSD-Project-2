@@ -1,16 +1,14 @@
 from flask import Flask
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
-import subprocess
-import time
-# from models.summary import generate_summary
 from models.speech2text import SpeechToText
 import base64
 import os
+import subprocess
+import time
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
-blobs = []
 CORS(app)
 
 # remove unrequired file on initial request for new request
