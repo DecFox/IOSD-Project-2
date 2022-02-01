@@ -1,6 +1,10 @@
 from flask import Flask
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
+import subprocess
+import time
+# from models.summary import generate_summary
+from models.speech2text import SpeechToText
 import base64
 import os
 
@@ -16,10 +20,22 @@ def index():
         os.remove("./video.webm")
     else:
         print("The file does not exist")
-    if os.path.exists("./audio.opus"):
-        os.remove("./audio.opus")
+    if os.path.exists("./audio.wav"):
+        os.remove("./audio.wav")
     else:
         print("The file does not exist")
+    return { "response": True }
+
+@app.route('/summary')
+def summary():
+    print('request')
+    subprocess.call(
+        ['ffmpeg', '-i', 'video.webm', '-vn', '-f', 'wav', '-ac', '1', 'audio.wav']
+    )
+    print("converted to audio .... check audio.opus")
+    time.sleep(4)
+    res = SpeechToText("audio.wav")
+    print(res)
     return { "response": True }
 
 @socketio.on('connect')
@@ -42,6 +58,10 @@ def receiveChunks(data):
 @socketio.on('ending')
 def saveFile(data):
     print("Chunks finished")
+
+@socketio.on('disconnect')
+def disconnect():
+    print('socket disconnected')
 
 
 if __name__ == '__main__':

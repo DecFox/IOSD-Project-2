@@ -3,6 +3,7 @@
     Video recorder (share tab to record audio)
     <br />
     Remember to start server before selecting screen to prevent loss of video chunks
+    <button class="summary" onclick="fetch_summary()">Summarize</button>
   </div>
 
   <video class="vid" controls></video>
@@ -20,6 +21,7 @@
       })
 
     vidEl = document.querySelector(".vid");
+    sumEl = document.querySelector(".summary")
 
     // set chunk frequency time here and duration of video here(in ms)
     var timeout = 500;
@@ -52,7 +54,7 @@
         setTimeout(() => {
           stoprecord();
           console.log("finished");
-        }, 30000);
+        }, 60000);
       })
       .catch((err) => {
         console.log(err);
@@ -99,6 +101,19 @@
     function stoprecord() {
       mediaRecorder.stop();
       socket.emit("ending", "Chunks finished");
+      setTimeout(() => {
+        socket.disconnect()
+      }, 5000)
+    }
+
+    function fetch_summary() {
+      fetch("http://localhost:5000/summary")
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
     }
 
   </script>
