@@ -11,10 +11,11 @@ def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 
-def punctuate(text):
+def punctuate(text, path):
    
     output = query({"inputs": text})
-    time.sleep(5)
+    print(output)
+    time.sleep(30)
     final = ''
     for grp in output:
         final += grp['word']
@@ -24,12 +25,12 @@ def punctuate(text):
         else:
             final += (punct + ' ')
     
-    with open("input.txt", "w+") as f:
+    with open(path, "w+") as f:
         f.write(final)
 
     return final
 
-def SpeechToText(path):
+def SpeechToText(path, path_to_save):
     wf = wave.open(path, "rb")
     model = Model("./models/model")
 
@@ -56,6 +57,6 @@ def SpeechToText(path):
     print(FinalText)
     print("-------text generated------")
 
-    result = punctuate(FinalText)
+    result = punctuate(FinalText, path_to_save)
 
     return result

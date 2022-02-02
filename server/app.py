@@ -2,6 +2,7 @@ from flask import Flask
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 from models.speech2text import SpeechToText
+from models.summary import generate_summary
 import base64
 import os
 import subprocess
@@ -30,10 +31,13 @@ def summary():
     subprocess.call(
         ['ffmpeg', '-i', 'video.webm', '-vn', '-f', 'wav', '-ac', '1', 'audio.wav']
     )
-    print("converted to audio .... check audio.opus")
+    print("converted to audio .... check audio.wav")
     time.sleep(4)
-    res = SpeechToText("audio.wav")
-    print(res)
+    tcs = SpeechToText("audio.wav", "input.txt")
+    print(tcs)
+    print("****************generating sumary****************")
+    tcs_sum = generate_summary("input.txt")
+    print(tcs_sum)
     return { "response": True }
 
 @socketio.on('connect')

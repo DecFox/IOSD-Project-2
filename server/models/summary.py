@@ -1,6 +1,9 @@
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize, sent_tokenize
+import nltk
+
+nltk.download('punkt')
 
 def _create_dictionary_table(text_string) -> dict:
     #removing stop words
@@ -90,6 +93,5 @@ def generate_summary(path):
     article_content2=f.read().replace('\n','')
     f.close()
     summary_results = _run_article_summary(article_content2)
-    print(summary_results)
 
     return summary_results

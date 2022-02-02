@@ -9,6 +9,9 @@
 /server/bin
 /server/pyvenv.cfg
 /server/lib
+/server/models/model
+/server/models/__pycache__
+/server/nltk_data
 
 # client dependencies
 /client/node_modules
