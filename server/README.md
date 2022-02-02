@@ -12,6 +12,8 @@ pip install -r requirements.txt
 ```
 (in the server directory)
 
+Install [ffmpeg](https://www.ffmpeg.org/download.html) for audio extraction from video.
+
 Server can be run on port: 5000 by
 ```
 flask run
