@@ -1,0 +1,47 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap'); */
+body{
+    background-color: rgb(62, 156, 238);
+    font-family: 'Source Sans Pro', sans-serif;
+    color:white;
+}
+.main{
+  padding:3px;
+  margin:3px;
+}
+.container{
+  text-align: center;
+  padding:5px;
+  margin: 5px;
+  border: 2px solid whitesmoke;
+  border-radius: 2px;
+}
+.container2{
+  text-align: center;
+  padding:2px;
+  margin: 2px;
+}
+
+/* CSS */
+.button-11 {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  color: #3D3D3D;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-11:focus {
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}

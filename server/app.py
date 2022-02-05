@@ -47,7 +47,10 @@ def test_connect():
 
 @socketio.on('videoChunks')
 def receiveChunks(data):
-    data = data.replace("data:video/webm;codecs=vp8,opus;base64,", "") # for audio + video
+    with open('data.txt', 'a+') as f:
+        f.write(data)
+    data = data.replace("data:video/webm;codecs=vp8,opus;base64,", "")
+    data = data.replace("data:video/x-matroska;codecs=avc1,opus;base64,", "") # for audio + video
     data = data.replace("data:video/webm;codecs=vp8;base64,", "") # for video only
 
     outdata = base64.b64decode(data)
