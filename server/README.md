@@ -28,5 +28,11 @@ which will download the **punkt** and **stopwords** data
 
 The client is configured to run for 3 minutes. While selecting a media stream, choose a tab since audio can only be recorded through a tab (MediaRecorder API restrictions)
 
+To authenticate the HuggingFace API add the **Bearer** value in 
+```
+server/models/speech2text.py
+```
+as a string.
+
 The HuggingFace Inference API may take some time to load the model (which will be corrected in the future) forcing punctuation outputs to showcase an error. In such a case, try running the **summarize** button again for from the client
 
