@@ -32,12 +32,16 @@ def summary():
         ['ffmpeg', '-i', 'video.webm', '-vn', '-f', 'wav', '-ac', '1', 'audio.wav']
     )
     print("converted to audio .... check audio.wav")
+
     time.sleep(4)
+    
     tcs = SpeechToText("audio.wav", "input.txt")
     print(tcs)
     print("****************generating sumary****************")
+    
     tcs_sum = generate_summary("input.txt")
     print(tcs_sum)
+    
     return { "response": True }
 
 @socketio.on('connect')
@@ -47,14 +51,11 @@ def test_connect():
 
 @socketio.on('videoChunks')
 def receiveChunks(data):
-    with open('data.txt', 'a+') as f:
-        f.write(data)
-    data = data.replace("data:video/webm;codecs=vp8,opus;base64,", "")
+    data = data.replace("data:video/webm;codecs=vp8,opus;base64,", "") # windows video format
     data = data.replace("data:video/x-matroska;codecs=avc1,opus;base64,", "") # for audio + video
     data = data.replace("data:video/webm;codecs=vp8;base64,", "") # for video only
 
     outdata = base64.b64decode(data)
-    # print("outdata: ", outdata)
     
     print("received chunk")
     with open('video.webm', 'ab+') as f:

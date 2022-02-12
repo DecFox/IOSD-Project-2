@@ -4,18 +4,17 @@ from vosk import KaldiRecognizer, Model
 import requests
 import time
 
+Bearer = ""
+
 API_URL = "https://api-inference.huggingface.co/models/oliverguhr/fullstop-punctuation-multilang-large"
-headers = {"Authorization": "Bearer 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"}
+headers = { "Authorization": Bearer }
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 
 def punctuate(text, path):
-   
-    output = query({"inputs": text})
-    print(output)
-    time.sleep(30)
+    output = query({"inputs": text, "options": { "wait_for_model": True }})
     final = ''
     for grp in output:
         final += grp['word']
