@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js ">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js "> 
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,12 +18,15 @@
     Remember to start server before selecting screen to prevent loss of video chunks
     <br />
   </div>
-    <button onclick="fetch_summary()" class="button-11" role="button" >Summarize</button>
+    <button class="button-11" role="button" id="start">Start</button>
+    <button class="button-11" role="button" id="summary">Summarize</button>
+    <!-- <button onclick="fetch_summary()" class="button-11" role="button" id="summary">Summarize</button> -->
   </div>
 
   <video class="vid" controls></video>
 </div>
-</body>
 
-<script src="script.js"></script>
+<script src="./popup.js"></script>
+
+</body>
 </html>
