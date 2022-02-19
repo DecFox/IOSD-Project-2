@@ -4,7 +4,7 @@ from vosk import KaldiRecognizer, Model
 import requests
 import time
 
-Bearer = ""
+Bearer = "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"
 
 API_URL = "https://api-inference.huggingface.co/models/oliverguhr/fullstop-punctuation-multilang-large"
 headers = { "Authorization": Bearer }

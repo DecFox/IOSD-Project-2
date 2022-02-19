@@ -5,27 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js "> 
-    <title>Document</title>
+    <title>Video Recorder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="p-3 mb-2 bg-light text-dark">
-  <div class="main">
-    <div class="container"><b>
-    VIDEO RECORDER</b></div>
-    <br />
-    <div class="container2">
-    Remember to start server before selecting screen to prevent loss of video chunks
-    <br />
+  <div class="frame5">
+    <span class="vidsum"></span>
+    <span class="pp">Privacy Policy</span>
   </div>
-    <button class="button-11" role="button" id="start">Start</button>
-    <button class="button-11" role="button" id="summary">Summarize</button>
+  <div class="group1">
+    <div class="rectangle5">
+      <div class="img"></div>
+      <div class="frame1">Upload a video or audio file</div>
+    </div>
+  </div>
+  <div class="frame2">
+    <span class="rectangle4"></span>
+    <span class="or">or</span>
+    <span class="rectangle3"></span>
+  </div>
+  <div class="group2">
+    <div class="text">Record a live meeting</div>
+    <button class="button1" role="button" id="start">Start</button>
     <!-- <button onclick="fetch_summary()" class="button-11" role="button" id="summary">Summarize</button> -->
   </div>
-
-  <video class="vid" controls></video>
-</div>
-
+  <div class="rectangle2">
+    <div class="frame6">
+    <span class="about">About</span>
+    <span class="terms">Terms & Conditions</span>
+    </div>
+  </div>
 <script src="./popup.js"></script>
 
 </body>
