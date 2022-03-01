@@ -10,6 +10,11 @@ body{
   width: 450px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -29,7 +34,7 @@ body{
   font-weight: 550;
 }
 
-.navbar h3 {
+.navbar a {
   color: #9C9898;
   font-weight: 400;
   font-size: 0.75rem;
@@ -145,10 +150,11 @@ button.upload:hover {
   justify-content: center;
 }
 
-.credits h2 {
+.credits a {
   color: var(--color-white);
-  display: inline-block;
+  display: block;
   font-size: 1rem;
   font-weight: normal;
   padding: 0 20px;
+  margin-top: 0.5rem;
 }
