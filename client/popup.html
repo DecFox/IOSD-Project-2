@@ -9,31 +9,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="frame5">
-    <span class="vidsum"></span>
-    <span class="pp">Privacy Policy</span>
-  </div>
-  <div class="group1">
-    <div class="rectangle5">
-      <div class="img"></div>
-      <div class="frame1">Upload a video or audio file</div>
+  <nav class="navbar">
+    <h1>Vid<span>Sum</span></h1>
+    <h3>Privacy Policy</h3>
+  </nav>
+
+  <div class="upload">
+    <div class="upload-inner">
+      <button type="button" class="upload">
+        <img src="img1.png" />
+        <h2>Upload a video or audio file</h2>
+      </button>
     </div>
   </div>
-  <div class="frame2">
-    <span class="rectangle4"></span>
-    <span class="or">or</span>
-    <span class="rectangle3"></span>
+
+  <div class="division">
+    <h4>or</h4>
   </div>
-  <div class="group2">
-    <div class="text">Record a live meeting</div>
-    <button class="button1" role="button" id="start">Start</button>
-    <!-- <button onclick="fetch_summary()" class="button-11" role="button" id="summary">Summarize</button> -->
+
+  <div class="record">
+    <h2>Record a Live Meeting</h2>
+    <button type="button" class="record">
+      Start Recording
+    </button>
   </div>
-  <div class="rectangle2">
-    <div class="frame6">
-    <span class="about">About</span>
-    <span class="terms">Terms & Conditions</span>
-    </div>
+
+  <div class="credits">
+    <h2>About</h2>
+    <h2>Terms & Conditions</h2>
   </div>
 <script src="./popup.js"></script>
 

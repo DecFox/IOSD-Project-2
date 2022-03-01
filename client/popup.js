@@ -21,5 +21,5 @@ async function startrecording() {
 }
 
 summary_btn = document.querySelector("#summary");
-document.querySelector("#start").addEventListener("click", startrecording);
+document.querySelector(".record").addEventListener("click", startrecording);
 document.querySelector("#summary").addEventListener("click", fetchSummary);

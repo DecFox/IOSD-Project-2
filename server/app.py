@@ -42,7 +42,7 @@ def summary():
     tcs_sum = generate_summary("input.txt")
     print(tcs_sum)
     
-    return { "response": True }
+    return { "response": tcs_sum }
 
 @socketio.on('connect')
 def test_connect():
