@@ -7,7 +7,7 @@ import time
 Bearer = "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"
 
 API_URL = "https://api-inference.huggingface.co/models/oliverguhr/fullstop-punctuation-multilang-large"
-headers = { "Authorization": Bearer }
+headers = { "Authorization": "Bearer " + Bearer }
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)

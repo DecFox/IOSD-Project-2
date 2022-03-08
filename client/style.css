@@ -8,6 +8,7 @@
 body{
   background: var(--color-white);
   width: 450px;
+  font-family: 'Poppins';
 }
 
 a {
@@ -20,7 +21,7 @@ a {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .navbar h1 {
@@ -31,7 +32,7 @@ a {
 
 .navbar span {
   color: var(--color-primary);
-  font-weight: 550;
+  font-weight: 600;
 }
 
 .navbar a {
@@ -123,9 +124,11 @@ button.upload:hover {
   width: 100%;
   text-align: center;
   margin-top: 0px;
+  margin-bottom: 0.5rem;
 }
 
 .record button {
+  font-family: 'Poppins';
   width: 65%;
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -135,6 +138,7 @@ button.upload:hover {
   font-family: sans-serif;
   border: none;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0.6rem;
 }
 
 .record button:hover {
@@ -144,7 +148,7 @@ button.upload:hover {
 .credits {
   width: 100%;
   background-color: var(--color-primary);
-  height: 4rem;
+  height: 4.25rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
